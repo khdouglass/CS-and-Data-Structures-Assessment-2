@@ -1,0 +1,111 @@
+Recursion: 
+
+1. Recursion is the process of breaking a problem down into smaller problems until 
+they are small enough to be solved simply. A recursive function accomplishes this 
+by calling itself one or more times. 
+
+2. A base case tells a function when to stop recursing. If the base case did not 
+exist, the function would theoretically continue calling itself forever -- however
+Python automatically stops the function at 1000 calls.
+
+Graphs:
+
+1. Graphs are a data structure containing nodes (or vertices) with edges connecting
+them; often used to model relationships between things. These relationships can be 
+directed or undirected, cyclic or acyclic and weighted.
+
+2. A graph is different than a tree because trees have a root, are always aycyclic 
+(treee nodes can only have one parent) and are directed. For those reasons, all trees are
+graphs, but not all graphs are trees.
+
+3. Relationships between Twitters users, their followers and who they follow.
+
+Performance of Different Data Structures
+
+-- Python List -- 
+    Add-L: O(n) need to change every pointer until end of list.
+    Pop-L: O(n) need to change every pointer until end of list.
+    Pop-R: O(1) just remove pointer at end of list -- one operation to find end of list.
+
+-- Linked List -- 
+    Index: O(n) need to walk through linked list to find value. 
+    Search: O(n) need to walk through linked list to find value.
+    Add-R: O(1) update current tail node's next to new node, point tail to new node.
+    Add-L: O(1) point new node's next to current head node, update head to new node.
+    Pop-L: O(1) update head to current head node's next.
+    Pop-R: O(n) walk list to find node with next pointing to last node, update
+        it's next to None and point tail to it.
+
+-- Doubly-Linked Link --
+    Index: O(n) need to walk through linked list to find value. 
+    Search: O(n) need to walk through linked list to find value.
+    Add-R: O(1) update current tail node's next to new node, point tail to new node.
+    Add-L: O(1) point new node's next to current head, update head to new node.
+    Pop-L: O(1) update head to current head's next.
+    Pop-R: O(1) get previous node from current tail, point it's next to None
+        and update tail to point to it.
+
+-- Queue(as Array) --
+    Add-R: O(1) one operation to find end of list, add new pointer.
+    Pop-L: O(n) need to change every pointer until end of list.
+
+-- Queue(as LL/DLL) -- 
+    Add-R: O(1) update current tail node's next to new node, point tail to new node.
+    Pop-L: O(1) update head to current head's next.
+
+-- Stack (as Array/LL/DLL) --
+    Add-R: O(1) 
+    Pop-R: O(1) as an Array/DLL; O(n) as a LL 
+
+-- Deque (as DLL) -- 
+    Add-R: O(1) update current tail node's next to new node, point tail to new node.
+    Add-L: O(1) point new node next to current head, update head to new node.
+    Pop-L: O(1) update head to current head's next.
+    Pop-R: O(1) can get previous node from current tail, point it's next to None
+        and update tail to point to it.
+
+-- Set (hashmap) --
+    Get: O(1) hash key and go to that index in array.
+    Add: O(1) hash key, go to index, add value.
+    Delete: O(1) hash key, go to index, remove item.
+    Iterate: O(n) walk through every item.
+    Memory: medium
+
+-- Binary Search Tree -- 
+    Get: O(log n) each step divides remaining nodes by 2.
+    Add: O(log n) walk tree until find spot to add item.
+    Delete: O(log n) walk tree until find spot to delete item.
+    Iterate: O(n) walk through every item.
+    Memory: less (no hashing)
+
+-- Tree -- 
+    Get: O(n) walk through tree to find node (no clear path like BTS).
+    Add: O(1) -- just the process of adding if already at node we want to add to 
+        (getting to that node is O(n))
+    Delete: O(1) -- just the process of deleting if already at node we want to delete from.
+        (getting to that node is O(n))
+    Iterate: O(n) walk through every item 
+    Memory: less (no hashing)
+
+Sorting
+
+1. Bubble sort starts at the beginning of a list and compares two numbers at a time, 
+swapping the larger to the right position. The sort moves one position to the right and
+performs the same comparison/swap. At the end of each traversal, the biggest number is
+placed at the end of the list.
+
+2. If we start with two already sorted lists, merge sort creates a third list to store sorted
+results from both. The first element of the original lists are compared and the 
+lower item is added to the third list. Continue comparing the first element of 
+each until one is empty, then append remaining items from the other list to the third.
+
+If we do not start with two already sorted lists, merge sort is done recursively and breaks
+the original list into smaller lists of 1 and merges them together into one sorted list.
+
+3. Quick Sort chooses a pivot element in the list to sort lower numbers to the left
+and higher items to the right. Quick Sort function is called recursively to sort each 
+side of the pivot until the length of the lists to sort are 1, which means they're sorted. 
+Lists are joined back together resulting in one sorted list.
+
+
+
